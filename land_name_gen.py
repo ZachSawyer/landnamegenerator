@@ -11,7 +11,7 @@ def sys_exit():
     raise SystemExit
 
 def open_file():
-    with open("landnamegen.json") as f:
+    with open("land_descriptors.json") as f:
         return json.load(f)
     
 def land_name():

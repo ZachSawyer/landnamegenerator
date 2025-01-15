@@ -14,16 +14,16 @@ def open_file():
     with open("land_descriptors.json") as f:
         return json.load(f)
     
-def land_name():
-    name = open_file()
-    evil_land_gen = f'The {secrets.choice(name["evil_land_adj"])} Lands of {secrets.choice(name["evil_land_noun"])}\n'
-    good_land_gen = f'The {secrets.choice(name["good_land_adj"])} Lands of {secrets.choice(name["good_land_noun"])}\n'
+def land_name(data):
+    evil_land_gen = f'The {secrets.choice(data["evil_land_adj"])} Lands of {secrets.choice(data["evil_land_noun"])}\n'
+    good_land_gen = f'The {secrets.choice(data["good_land_adj"])} Lands of {secrets.choice(data["good_land_noun"])}\n'
     return evil_land_gen, good_land_gen
 
 def main():
+    data = open_file()
     while True:
         clrscr()
-        evil_name, good_name = land_name()
+        evil_name, good_name = land_name(data)
         print(evil_name)
         print(good_name)
         print("Press Enter to Continue Generating Names")

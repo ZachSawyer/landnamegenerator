@@ -11,9 +11,16 @@ def sys_exit():
     raise SystemExit
 
 def open_file():
-    with open("land_descriptors.json") as f:
-        return json.load(f)
-    
+    try:
+        with open("land_descriptors.json") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print('No Such File Exists')
+        sys_exit()
+    except json.JSONDecodeError as e:
+        print(f"Error parsing data: {e}")
+        sys_exit()
+
 def land_name(data):
     evil_land_gen = f'The {secrets.choice(data["evil_land_adj"])} Lands of {secrets.choice(data["evil_land_noun"])}\n'
     good_land_gen = f'The {secrets.choice(data["good_land_adj"])} Lands of {secrets.choice(data["good_land_noun"])}\n'

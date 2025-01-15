@@ -1,0 +1,26 @@
+{
+    "good_land_noun":[
+        "Hope",
+        "Love",
+        "Kindness",
+        "Compassion"
+    ],
+    "good_land_adj":[
+        "Wondrous",
+        "Glorious",
+        "Angelic",
+        "Peaceful"
+    ],
+    "evil_land_noun":[
+        "Hatred",
+        "Wrath",
+        "Vengeance",
+        "Cruelty"
+    ],
+    "evil_land_adj":[
+        "Destructive",
+        "Evil",
+        "Dominating",
+        "Stagnant"
+    ]
+}
